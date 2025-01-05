@@ -10,7 +10,6 @@ const getPokemons = async (req, res) => {
 
     let isPkInArr = pokemons.some((pokemon) => pokemon.id === randomPkId);
     if (isPkInArr) {
-      console.log("repeating...");
       x--;
     } else {
       const pkToAdd = await prisma.pokemon.findUnique({
